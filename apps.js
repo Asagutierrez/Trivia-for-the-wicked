@@ -1,73 +1,120 @@
-/*---------------------- Constants ------------------------*/
-const triviaQuestion = {
-  question: 'What color is the sky?',
-  answers: [
-    {
-      answer:'blue', 
-      isAnswer: true
-    },
-    {
-      answer:'green',
-      isAnswer: false
-    },
-    {
-      answer:'yellow',
-      isAnswer: false
-  }
-  ],
-  
-}
-//render question 
-
+const triviaQuestions = [
+  {
+    question: 'What color is the sky?',
+    answers: [
+      { 
+        answer: 'Blue', 
+        isAnswer: true 
+      },
+      { 
+        answer: 'Green', 
+        isAnswer: false 
+      },
+      { 
+        answer: 'Yellow', 
+        isAnswer: false 
+      },
+    ],
+  },
+  {
+    question: 'What was the first commercially successful video game?',
+    answers: [
+      { 
+        answer: 'Pong', 
+        isAnswer: true 
+      },
+      { 
+        answer: 'Tetris', 
+        isAnswer: false 
+      },
+      { 
+        answer: 'Gta5', 
+        isAnswer: false 
+      },
+    ],
+  },
+  {
+    question: 'What is the best selling videogame of all time?',
+    answers: [
+      { 
+        answer: 'Minecraft', 
+        isAnswer: true 
+      },
+      { 
+        answer: 'Skyrim', 
+        isAnswer: false 
+      },
+      { 
+        answer: 'Call of duty black ops 2', 
+        isAnswer: false 
+      },
+    ],
+  },
+]
 /*------------------- Variables (state) --------------------*/
-// let board, turn, winner, tie
-//set state for current question, answerClicked score
 let currQuestionIndex = 0
 let score = 0
-
 /*--------------- Cached Element References ----------------*/
 const questionElement = document.getElementById('question')
-const answersElement = document.getElementById('anwsers')
+const answersElement = document.getElementById('answers')
 const scoreElement = document.getElementById('score')
+
 /*---------------------- Event Listeners -------------------*/
-// reference TTT line 22-24 for implamenting event listeners to trivia question answers
 
-//add event listeners answers after iterating thru them with a for each method
+
 /*----------------------- Functions ------------------------*/
-// add init function
-// use forloop or forEach loop to iterate thru the questions
-init ()
-
 function initGame() {
-  currQuestionIndex = 0
-  Score = 0
+  console.log('Initializing game...')
+  currQuestionIndex = 0;
+  score = 0
   renderGame()
 }
 
-function renderStateOfGame() {
-  if (currQuestionIndex < questions.length) {
-    const currentQuestion = questions[currQuestionIndex]
+function renderGame() {
+  
+  if (currQuestionIndex < triviaQuestions.length) {
+    
+    const currentQuestion = triviaQuestions[currQuestionIndex]
+
     questionElement.textContent = currentQuestion.question
+
     answersElement.innerHTML = ""
+
     currentQuestion.answers.forEach((answer, index) => {
       const button = document.createElement('button')
-      button.textContent = answer
-      button.addEventListener('click', () => handleAnswer(index))
-      answersElement,appendChild(button)
+      button.textContent = answer.answer
+      button.addEventListener('click', () => handleAnswer(index));
+      answersElement.appendChild(button)
     })
-    scoreElement.textContent = `Score ${score}`
+
+    scoreElement.textContent = `Score: ${score}`
   } else {
     endGame()
   }
 }
 
 function handleAnswer(answerIndex) {
-  const currentQuestion = questions[currQuestionIndex]
-  
+  const currentQuestion = triviaQuestions[currQuestionIndex];
 
-  if (currentQuestion.answers[answerIndex].correct) {
+  if (answerIndex === currentQuestion.answers) {
     score++
   }
+    
+
+  console.log(`Selected answer: ${currentQuestion.answers[answerIndex].answer}`)
+  console.log(`Current score: ${score}`)
+  
   currQuestionIndex++
   renderGame()
 }
+
+function endGame() {
+  console.log('Game Over!')
+  questionElement.textContent = "Game Is Over"
+  answersElement.innerHTML = `Your final score is ${score} out of ${triviaQuestions.length}`;
+  scoreElement.textContent = ""
+  
+}
+
+
+initGame()
