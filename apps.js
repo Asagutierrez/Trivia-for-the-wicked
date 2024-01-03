@@ -89,14 +89,14 @@ function renderGame() {
 
     scoreElement.textContent = `Score: ${score}`
   } else {
-    endGame()
+    endOfGame()
   }
 }
 
 function handleAnswer(answerIndex) {
   const currentQuestion = triviaQuestions[currQuestionIndex];
 
-  if (answerIndex === currentQuestion.answers) {
+  if (currentQuestion.answers[answerIndex].isAnswer) {
     score++
   }
     
@@ -108,7 +108,7 @@ function handleAnswer(answerIndex) {
   renderGame()
 }
 
-function endGame() {
+function endOfGame() {
   console.log('Game Over!')
   questionElement.textContent = "Game Is Over"
   answersElement.innerHTML = `Your final score is ${score} out of ${triviaQuestions.length}`;
