@@ -1,17 +1,19 @@
 const triviaQuestions = [
   {
-    question: 'What color is the sky?',
+    category: 'Gaming',
+    question: 'What year was the Super Nintendo Entertainment System (SNES) released?',
     answers: [
       { 
-        answer: 'Blue', 
+        
+        answer: '1991', 
         isAnswer: true 
       },
       { 
-        answer: 'Green', 
+        answer: '1999', 
         isAnswer: false 
       },
       { 
-        answer: 'Yellow', 
+        answer: '1985', 
         isAnswer: false 
       },
     ],
@@ -20,12 +22,12 @@ const triviaQuestions = [
     question: 'What was the first commercially successful video game?',
     answers: [
       { 
-        answer: 'Pong', 
-        isAnswer: true 
+        answer: 'Tetris', 
+        isAnswer: false
       },
       { 
-        answer: 'Tetris', 
-        isAnswer: false 
+        answer: 'Pong', 
+        isAnswer: true 
       },
       { 
         answer: 'Gta5', 
@@ -50,6 +52,41 @@ const triviaQuestions = [
       },
     ],
   },
+  {
+    question: 'What year was Nintendo founded?',
+    answers: [
+      { 
+        answer: '1875', 
+        isAnswer: false
+      },
+      { 
+        answer: '1869', 
+        isAnswer: false 
+      },
+      { 
+        answer: '1889', 
+        isAnswer: true
+      },
+    ],
+  },
+  {
+    question: 'Blizzard Entertainment is most well known for what video game franchise?',
+    answers: [
+      { 
+        answer: 'OverWatch', 
+        isAnswer: false
+      },
+      { 
+        answer: 'Heartstone', 
+        isAnswer: false 
+      },
+      { 
+        answer: 'World of warcarft', 
+        isAnswer: true
+      },
+    ],
+  },
+  
 ]
 /*------------------- Variables (state) --------------------*/
 let currQuestionIndex = 0
