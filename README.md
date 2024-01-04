@@ -4,10 +4,10 @@
 
 # https://triviaforthewicked.netlify.app/
 
-## Attributions
-# I used https://developer.mozilla.org/en-US/ for the video game questions i used https://icebreakerideas.com/video-game-trivia/ 
+# Attributions
+## I used https://developer.mozilla.org/en-US/ for the video game questions i used https://icebreakerideas.com/video-game-trivia/ 
 
 # Technologies Used
 ## Java Script Css Flexbox
 
-# Add more design fetures such as a score tracker api where it lists all of your score 
+## Add more design fetures such as a score tracker api where it lists all of your score 
