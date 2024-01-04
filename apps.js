@@ -19,6 +19,7 @@ const triviaQuestions = [
     ],
   },
   {
+    category: 'Gaming',
     question: 'What was the first commercially successful video game?',
     answers: [
       { 
@@ -36,6 +37,7 @@ const triviaQuestions = [
     ],
   },
   {
+    category: 'Gaming',
     question: 'What is the best selling videogame of all time?',
     answers: [
       { 
@@ -53,6 +55,7 @@ const triviaQuestions = [
     ],
   },
   {
+    category: 'Gaming',
     question: 'What year was Nintendo founded?',
     answers: [
       { 
@@ -70,10 +73,11 @@ const triviaQuestions = [
     ],
   },
   {
+    category: 'Gaming',
     question: 'Blizzard Entertainment is most well known for what video game franchise?',
     answers: [
       { 
-        answer: 'OverWatch', 
+        answer: 'Overwatch', 
         isAnswer: false
       },
       { 
@@ -97,7 +101,7 @@ const answersElement = document.getElementById('answers')
 const scoreElement = document.getElementById('score')
 
 /*---------------------- Event Listeners -------------------*/
-
+resetButton.addEventListener('click', resetGame)
 
 /*----------------------- Functions ------------------------*/
 function initGame() {
@@ -113,7 +117,7 @@ function renderGame() {
     
     const currentQuestion = triviaQuestions[currQuestionIndex]
 
-    questionElement.textContent = currentQuestion.question
+    questionElement.textContent = `[${currentQuestion.category}] ${currentQuestion.question}`
 
     answersElement.innerHTML = ""
 
@@ -151,6 +155,12 @@ function endOfGame() {
   answersElement.innerHTML = `Your final score is ${score} out of ${triviaQuestions.length}`;
   scoreElement.textContent = ""
   
+}
+
+function resetGame() {
+  currQuestionIndex = 0
+  score = 0
+  renderGame()
 }
 
 
