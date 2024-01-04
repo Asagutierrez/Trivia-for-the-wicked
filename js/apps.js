@@ -4,6 +4,8 @@ import triviaQuestions from "./questons.js"
 /*------------------- Variables (state) --------------------*/
 let currQuestionIndex = 0
 let score = 0
+let originalQuestions = [...triviaQuestions]
+let currentCategory = ''
 /*--------------- Cached Element References ----------------*/
 const categoryButtons = document.querySelectorAll('.category-buttons')
 const questionElement = document.getElementById('question')
@@ -38,7 +40,7 @@ function renderGame() {
     currentQuestion.answers.forEach((answer, index) => {
       const button = document.createElement('button')
       button.textContent = answer.answer
-      button.addEventListener('click', () => handleAnswer(index));
+      button.addEventListener('click', () => handleAnswer(index))
       answersElement.appendChild(button)
     })
 
@@ -49,7 +51,7 @@ function renderGame() {
 }
 
 function handleAnswer(answerIndex) {
-  const currentQuestion = triviaQuestions[currQuestionIndex];
+  const currentQuestion = triviaQuestions[currQuestionIndex]
 
   if (currentQuestion.answers[answerIndex].isAnswer) {
     score++
@@ -78,16 +80,18 @@ function endOfGame() {
 function resetGame() {
   currQuestionIndex = 0
   score = 0
+  triviaQuestions.length = 0
+  triviaQuestions.push(...originalQuestions.filter)(question => question.category === currentCategory)
   renderGame()
 }
 
-function handleClick(event) {
-  const selectedCategory = event.target.textContent
-  const filteredQuestions = triviaQuestions.filter(question => question.category === selectedCategory)
+function handleClick(evt) {
+  currentCategory = evt.target.textContent
+  const filteredQuestions = triviaQuestions.filter(question => question.category === currentCategory)
   currQuestionIndex = 0
   score = 0
   triviaQuestions.length = 0
-  triviaQuestions.push(filteredQuestions)
+  triviaQuestions.push(...filteredQuestions)
   renderGame()
 }
 
