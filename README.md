@@ -16,4 +16,4 @@
 ## Java Script Css Flexbox
 
 # Next steps
-## Add more design fetures such as a score tracker api where it lists all of your score  as well as more art want to chage the buttons to images 
+## AAdd more design features such as a score tracker API that lists all of your scores as well as more art I want to change the buttons to images as well as add sounds
