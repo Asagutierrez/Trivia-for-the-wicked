@@ -6,11 +6,13 @@ let currQuestionIndex = 0
 let score = 0
 let originalQuestions = [...triviaQuestions]
 let currentCategory = ''
+
 /*--------------- Cached Element References ----------------*/
 const categoryButtons = document.querySelectorAll('.category-buttons')
 const questionElement = document.getElementById('question')
 const answersElement = document.getElementById('answers')
 const scoreElement = document.getElementById('score')
+const timerElement = document.getElementById('timer')
 
 /*---------------------- Event Listeners -------------------*/
 categoryButtons.forEach(button => {
@@ -49,9 +51,32 @@ function renderGame() {
     })
 
     scoreElement.textContent = `Score: ${score}`
+
+    startTimer(10)
   } else {
     endOfGame()
   }
+}
+
+function startTimer(seconds) {
+  let timeLeft = seconds
+  timerElement.textContent = `Time Left: ${timeLeft}s`
+
+  timer = setInterval(() => {
+    timeLeft--
+    
+
+    if (timeLeft >= 0) {
+      timerElement.textContent = `Time Left: ${timeLeft}s`
+    }
+    if (timeLeft === 0) {
+      handleAnswer(-1)
+    }
+  }, 1000)
+}
+
+function stopTimer() {
+  clearInterval(timer)
 }
 
 
@@ -63,6 +88,7 @@ function handleClick(evt) {
   triviaQuestions.length = 0
   triviaQuestions.push(...filteredQuestions)
   resetButton.hidden = false
+  categoryButtons.forEach(button => (button.style.display = 'none'))
   renderGame()
 }
 
@@ -77,14 +103,11 @@ function resetGame() {
 
 function handleAnswer(answerIndex) {
   const currentQuestion = triviaQuestions[currQuestionIndex]
-
-  if (currentQuestion.answers[answerIndex].isAnswer) {
+  stopTimer()
+  if (answerIndex !== -1 && currentQuestion.answers[answerIndex].isAnswer) {
     score++
   }
-    
-
-  console.log(`Selected answer: ${currentQuestion.answers[answerIndex].answer}`)
-  console.log(`Current score: ${score}`)
+  
   
   currQuestionIndex++
   renderGame()
