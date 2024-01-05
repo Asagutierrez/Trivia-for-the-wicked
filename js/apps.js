@@ -120,6 +120,7 @@ function handleAnswer(answerIndex) {
   if (answerIndex !== -1 && currentQuestion.answers[answerIndex].isAnswer) {
     score++
   }
+  
   currQuestionIndex++
   renderGame()
 }

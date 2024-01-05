@@ -7,7 +7,10 @@
 # https://triviaforthewicked.netlify.app/
 
 # Attributions
-## I used https://developer.mozilla.org/en-US/ for the video game questions i used https://icebreakerideas.com/video-game-trivia/ 
+## https://developer.mozilla.org/en-US/ 
+## https://icebreakerideas.com/video-game-trivia/ 
+## https://freesound.org/
+## https://www4.lunapic.com/editor/?action=quick-upload
 
 # Technologies Used
 ## Java Script Css Flexbox
