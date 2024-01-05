@@ -1,5 +1,9 @@
 body {
-  background-color: gray;
+  background-image: url(/images/relaxing-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 50px;
@@ -22,13 +26,15 @@ body {
   border: none;
   border-radius: 5px;
 }
+
 .category-buttons button:hover {
-  background-color: #2980b9;
+  background-color: #173549;
 }
 
 #question {
   font-size: 20px;
   margin-bottom: 20px;
+  color: white;
 }
 
 #answers {
@@ -42,9 +48,56 @@ body {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+#answers button:hover {
+  background-color: green;
 }
 
 #score {
   font-size: 18px;
   margin-top: 20px;
 }
+
+#resetButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#resetButton {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#resetButton:hover {
+  background-color: #42a047;
+}
+
+#musicButtonContainer {
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#musicButton {
+  font-size: 16px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 5px;
+}
+
+body.gaming {
+  background: url(/images/Gaming.jpg) center/cover no-repeat;
+}
+
+

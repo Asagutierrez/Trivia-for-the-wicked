@@ -13,10 +13,15 @@ const questionElement = document.getElementById('question')
 const answersElement = document.getElementById('answers')
 const scoreElement = document.getElementById('score')
 const timerElement = document.getElementById('timer')
-
+const backgroundMusic = document.getElementById('backgroundMusic')
+const musicButton = document.getElementById('musicButton')
+const resetButton = document.getElementById('resetButton')
 /*---------------------- Event Listeners -------------------*/
 categoryButtons.forEach(button => {
   button.addEventListener('click', handleClick)
+})
+musicButton.addEventListener('click', () => {
+  toggleMusic()
 })
 
 resetButton.addEventListener('click', resetGame)
@@ -39,7 +44,7 @@ function renderGame() {
     
     const currentQuestion = triviaQuestions[currQuestionIndex]
 
-    questionElement.textContent = `[${currentQuestion.category}] ${currentQuestion.question}`
+    questionElement.textContent = `${currentQuestion.question}`
 
     answersElement.innerHTML = ""
 
@@ -52,9 +57,17 @@ function renderGame() {
 
     scoreElement.textContent = `Score: ${score}`
 
-    startTimer(10)
+    startTimer(15)
   } else {
     endOfGame()
+  }
+}
+
+function toggleMusic() {
+  if (backgroundMusic.paused){
+    backgroundMusic.play()
+  } else {
+    backgroundMusic.pause()
   }
 }
 
@@ -107,15 +120,12 @@ function handleAnswer(answerIndex) {
   if (answerIndex !== -1 && currentQuestion.answers[answerIndex].isAnswer) {
     score++
   }
-  
-  
   currQuestionIndex++
   renderGame()
 }
 
 function endOfGame() {
-  console.log('Game Over!')
-  if (score >= 3) {
+  if (score >= 5) {
     questionElement.textContent = "Congratulations! You Won!"
   } else {
     questionElement.textContent = "Sorry! You Lost. Try Again!"
@@ -123,6 +133,5 @@ function endOfGame() {
   answersElement.innerHTML = `Your final score is ${score} out of ${triviaQuestions.length}`
   scoreElement.textContent = ""
 }
-
 
 initGame()

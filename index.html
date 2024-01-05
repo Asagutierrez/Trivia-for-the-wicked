@@ -6,6 +6,13 @@
     <title>Trivia for the wicked</title>
     <link rel="stylesheet" href="./css/style.css">
     <script type="module" src="./js/apps.js"></script>
+    <link 
+    id="favicon"
+    rel="icon"
+    href="./images/controller-favicon.png"
+    type="image/png"
+    sizez = 32x32
+    >
 </head>
 <body>
     <div class="category-buttons">
@@ -17,6 +24,16 @@
     <div id="answers"></div>
     <div id="score"></div>
     <div id="timer"></div>
+    <div id="musicButtonContainer">
+        <button id="musicButton">🎵</button>
+    </div>
+    <div>
+        <audio id="backgroundMusic" loop>
+            <source src="/audio/511437__theojt__relaxing-short-music.mp3" type="audio/mp3">
+        </audio>
+    </div>
+    <div id="resetButtonContainer">
     <button id="resetButton" hidden>Reset Game</button>
+    </div>
 </body>
 </html>
