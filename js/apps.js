@@ -21,14 +21,17 @@ resetButton.addEventListener('click', resetGame)
 
 /*----------------------- Functions ------------------------*/
 function initGame() {
-  console.log('Initializing game')
+  categoryButtons.forEach(button => button.hidden = false)
+  questionElement.textContent = ''
+  answersElement.innerHTML = ''
+  scoreElement.textContent = ''
   currQuestionIndex = 0;
   score = 0
-  renderGame()
 }
 
 function renderGame() {
-  
+  categoryButtons.forEach(button => button.hidden = true)
+
   if (currQuestionIndex < triviaQuestions.length) {
     
     const currentQuestion = triviaQuestions[currQuestionIndex]
@@ -50,6 +53,25 @@ function renderGame() {
   }
 }
 
+
+function handleClick(evt) {
+  currentCategory = evt.target.textContent
+  const filteredQuestions = triviaQuestions.filter(question => question.category === currentCategory)
+  currQuestionIndex = 0
+  score = 0
+  triviaQuestions.length = 0
+  triviaQuestions.push(...filteredQuestions)
+  renderGame()
+}
+
+function resetGame() {
+  currQuestionIndex = 0
+  score = 0
+  triviaQuestions.length = 0
+  triviaQuestions.push(...originalQuestions.filter(question => question.category === currentCategory))
+  renderGame()
+}
+
 function handleAnswer(answerIndex) {
   const currentQuestion = triviaQuestions[currQuestionIndex]
 
@@ -65,7 +87,6 @@ function handleAnswer(answerIndex) {
   renderGame()
 }
 
-
 function endOfGame() {
   console.log('Game Over!')
   if (score >= 3) {
@@ -75,24 +96,6 @@ function endOfGame() {
   }
   answersElement.innerHTML = `Your final score is ${score} out of ${triviaQuestions.length}`
   scoreElement.textContent = ""
-}
-
-function resetGame() {
-  currQuestionIndex = 0
-  score = 0
-  triviaQuestions.length = 0
-  triviaQuestions.push(...originalQuestions.filter)(question => question.category === currentCategory)
-  renderGame()
-}
-
-function handleClick(evt) {
-  currentCategory = evt.target.textContent
-  const filteredQuestions = triviaQuestions.filter(question => question.category === currentCategory)
-  currQuestionIndex = 0
-  score = 0
-  triviaQuestions.length = 0
-  triviaQuestions.push(...filteredQuestions)
-  renderGame()
 }
 
 
