@@ -25,6 +25,7 @@ function initGame() {
   questionElement.textContent = ''
   answersElement.innerHTML = ''
   scoreElement.textContent = ''
+  resetButton.hidden = true
   currQuestionIndex = 0;
   score = 0
 }
@@ -61,6 +62,7 @@ function handleClick(evt) {
   score = 0
   triviaQuestions.length = 0
   triviaQuestions.push(...filteredQuestions)
+  resetButton.hidden = false
   renderGame()
 }
 
@@ -69,6 +71,7 @@ function resetGame() {
   score = 0
   triviaQuestions.length = 0
   triviaQuestions.push(...originalQuestions.filter(question => question.category === currentCategory))
+  resetButton.hidden = true
   renderGame()
 }
 

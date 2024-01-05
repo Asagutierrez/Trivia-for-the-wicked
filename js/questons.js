@@ -157,7 +157,7 @@ const triviaQuestions = [
         isAnswer: false 
       },
       { 
-        answer: 'Microsof', 
+        answer: 'Microsoft', 
         isAnswer: true
       },
     ],
@@ -361,7 +361,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'What is the name of the continent where the city of Demacia and Noxus are located?',
     answers: [
       { 
@@ -379,7 +379,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'Which champions weapon of choice is a rocket launcher?',
     answers: [
       { 
@@ -397,7 +397,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'Who is the Undead Juggernaut?',
     answers: [
       { 
@@ -415,7 +415,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'Who was the first champion ever designed?',
     answers: [
       { 
@@ -433,7 +433,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'Who was the first champion to receive a legendary skin?',
     answers: [
       { 
@@ -451,7 +451,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'Which champion is known as the “Eye of the Void”?',
     answers: [
       { 
@@ -469,7 +469,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'Which champion is a sentient weapon?',
     answers: [
       { 
@@ -487,7 +487,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'Which champion is known as the Tiny Master of Evil?',
     answers: [
       { 
@@ -523,7 +523,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'Who is known as the Hand of Noxus?',
     answers: [
       { 
