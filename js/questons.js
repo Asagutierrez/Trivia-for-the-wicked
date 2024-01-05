@@ -505,7 +505,7 @@ const triviaQuestions = [
     ],
   },
   {
-    category: 'league of legends',
+    category: 'League of Legends',
     question: 'What is the ultimate ability of Zed called?',
     answers: [
       { 
