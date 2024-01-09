@@ -380,7 +380,7 @@ const triviaQuestions = [
   },
   {
     category: 'League of Legends',
-    question: 'Which champions weapon of choice is a rocket launcher?',
+    question: "Which champion's weapon of choice is a rocket launcher?",
     answers: [
       { 
         answer: 'Tristana', 

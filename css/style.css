@@ -1,12 +1,11 @@
 body {
-  background-image: url(/images/relaxing-background.jpg);
+  background-image: url(/images/brady-corps-ellyLSXQ5wg-unsplash.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   font-family: Arial, sans-serif;
   text-align: center;
-  margin: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,26 +14,38 @@ body {
 .category-buttons {
   display: flex;
   gap: 10px;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+#timer {
+  color: black;
+  font-size: 30px;
 }
 
 .category-buttons button {
-  padding: 10px;
-  font-size: 16px;
+  padding: 24px;
+  text-align: center;
+  font-size: 50px;
   cursor: pointer;
-  background-color: blue;
+  background-color: black;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
+  margin-top: 50px;
 }
 
 .category-buttons button:hover {
-  background-color: #173549;
+  background-color: #0d344e;
 }
 
 #question {
-  font-size: 20px;
+  font-size: 35px;
   margin-bottom: 20px;
-  color: white;
+  color: black;
 }
 
 #answers {
@@ -46,10 +57,11 @@ body {
 
 #answers button {
   padding: 10px;
-  font-size: 16px;
+  font-size: 24px;
   cursor: pointer;
   background-color: black;
   color: white;
+  margin-top: 50px;
 }
 
 #answers button:hover {
@@ -57,7 +69,8 @@ body {
 }
 
 #score {
-  font-size: 18px;
+  font-size: 30px;
+  color: black;
   margin-top: 20px;
 }
 
@@ -72,7 +85,7 @@ body {
   background-color: black;
   color: white;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 25px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -89,15 +102,11 @@ body {
 }
 
 #musicButton {
-  font-size: 16px;
+  font-size: 25px;
   padding: 8px;
   cursor: pointer;
   background-color: black;
   border-radius: 5px;
-}
-
-body.gaming {
-  background: url(/images/Gaming.jpg) center/cover no-repeat;
 }
 
 
