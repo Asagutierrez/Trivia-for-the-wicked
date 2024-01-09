@@ -1,4 +1,4 @@
-![Alt text](image.png)
+![Alt text](image-1.png)
 
 # Trivia for the Wicked 
 ## My game is built around my love for games I used to play trivia games as a kid and always loved playing them. The category and such are built around video game knowledge and other sort of things.You have 3 guesses to win the game but if you do not get 3 you will lose.
