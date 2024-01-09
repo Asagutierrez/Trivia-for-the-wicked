@@ -116,7 +116,7 @@ function handleAnswer(answerIndex) {
 }
 
 function endOfGame() {
-  if (score >= 5) {
+  if (score >= 3) {
     questionElement.textContent = "Congratulations! You Won!"
   } else {
     questionElement.textContent = "Sorry! You Lost. Try Again!"
