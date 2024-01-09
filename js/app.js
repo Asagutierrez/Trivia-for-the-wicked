@@ -123,6 +123,7 @@ function endOfGame() {
   }
   answersElement.innerHTML = `Your final score is ${score} out of ${triviaQuestions.length}`
   scoreElement.textContent = ""
+  stopTimer()
 }
 
 initGame()
